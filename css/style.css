@@ -1,0 +1,132 @@
+html, body {
+  height: 100%;
+}
+
+#carousel {
+  width: 15%;
+  text-align: center;
+  background-color: #8CCB5E;
+  font-size: 2em;
+  font-family: Monotype Corsiva, serif;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.carousel-control {
+  bottom: inherit;
+  top: 7px;
+  left: -21px;
+}
+
+a.text-center {
+  vertical-align: top;
+  margin-left: 5px;
+}
+
+a.text-center > button.btn-success {
+  height: 40px;
+}
+
+div#change-salary {
+  margin-left: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: top;
+  padding-top: 3px;
+  background-color: gainsboro;
+  height: 40px;
+}
+
+form#add-bonus > button.btn-info {
+  vertical-align: center;
+  margin-right: 5px;
+}
+
+form#add-bonus > div.btn-group {
+  margin-left: 5px;
+}
+
+tr{
+  text-align: center;
+}
+
+th {
+  text-align: center;
+}
+
+.my-table thead>tr>th, .my-table tbody>tr>td {
+  vertical-align: inherit;
+}
+
+div.panel {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* картинка на странице */
+.minimized {
+  width: 100px;
+  cursor: pointer;
+  border: 1px solid #FFF;
+}
+
+.minimized:hover {
+  border: 1px solid yellow;
+}
+
+/* увеличенная картинка */
+#magnify {
+  display: none;
+  position: fixed;
+  max-width: 600px;
+  height: auto;
+  z-index: 9999;
+}
+
+#magnify img {
+  width: 100%;
+}
+
+/* затемняющий фон */
+#overlay {
+  display: none;
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  z-index: 9990;
+}
+
+/* кнопка закрытия */
+#close-popup {
+  width: 30px;
+  height: 30px;
+  background: #FFFFFF;
+  border: 1px solid #AFAFAF;
+  border-radius: 15px;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+#close-popup i {
+  width: 30px;
+  height: 30px;
+  background: url(https://codernote.ru/files/cross.png) no-repeat center center;
+  background-size: 16px 16px;
+  display: block;
+}
+
+@keyframes rota {
+  25% { transform: rotate(360deg); }
+}
+
+#close-popup:hover {
+  animation: rota 4s infinite normal;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
