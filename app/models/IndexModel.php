@@ -7,6 +7,21 @@ require_once "Model.php";
  */
 class IndexModel extends Model
 {
+
+    public function checkTable ()
+    {
+        $table = 'workers';
+
+        $sql = "SHOW TABLES LIKE :workers";
+
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(":workers",$table, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $res = $stmt->fetch(PDO::FETCH_NUM);
+
+        return $res;
+    }
     /**
      * Получаем данные работников
      * @param $month

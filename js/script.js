@@ -13,7 +13,13 @@ $(document).ready(function() {
                     .removeAttr('hidden');break;
                 case 1:
                     div.text('Создание прошло успешно!!!')
-                    .removeAttr('hidden');break;
+                    .removeAttr('hidden');
+                    div.after('<a href="/" class="text-center">' +
+                                    '<button type="button" class="btn btn-success">' +
+                                        'Посмотреть' +
+                                    '</button>' +
+                                '</a>');
+                    break;
             }
         });
     });

@@ -17,27 +17,29 @@ class IndexController extends Controller
     {
         $this->pageData['title'] = "Просмотр сотрудников";
 
-        $month = date("m", time());
-        $this->pageData['current_month'] = $month;
-        $this->pageData['workers'] = $this->model->getWorkers($month);
-        $this->pageData['positions'] = $this->model->getPositions();
+        if ($this->model->checkTable()) {
+            $month = date("m", time());
+            $this->pageData['current_month'] = $month;
+            $this->pageData['workers'] = $this->model->getWorkers($month);
+            $this->pageData['positions'] = $this->model->getPositions();
 
-        $this->pageData['months'] = [
-            1 => 'январь',
-            2 => 'февраль',
-            3 => 'март',
-            4 => 'апрель',
-            5 => 'май',
-            6 => 'июнь',
-            7 => 'июль',
-            8 => 'август',
-            9 => 'сентябрь',
-            10 => 'октябрь',
-            11 => 'ноябрь',
-            12 => 'декабрь',
-        ];
+            $this->pageData['months'] = [
+                1 => 'январь',
+                2 => 'февраль',
+                3 => 'март',
+                4 => 'апрель',
+                5 => 'май',
+                6 => 'июнь',
+                7 => 'июль',
+                8 => 'август',
+                9 => 'сентябрь',
+                10 => 'октябрь',
+                11 => 'ноябрь',
+                12 => 'декабрь',
+            ];
 
-        $this->pageData['currency'] = Currency::getCurrency('USD', 2);
+            $this->pageData['currency'] = Currency::getCurrency('USD', 2);
+        }
 
         $this->view->render($this->pageTpl, $this->pageData);
     }
